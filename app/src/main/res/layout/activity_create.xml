@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateActivity">
+
+   <TextView
+       android:id="@+id/enterNameTextView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Enter your Name"
+       android:layout_marginTop="16dp"
+       android:layout_marginStart="16dp"/>
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enterNameTextView"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/breakfastTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Breakfast"
+        android:layout_below="@id/nameEditText"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <EditText
+        android:id="@+id/breakfastEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/breakfastTextView"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/lunchTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lunch"
+        android:layout_below="@id/breakfastEditText"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <EditText
+        android:id="@+id/lunchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lunchTextView"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="text"/>
+    <TextView
+        android:id="@+id/dinnerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dinner"
+        android:layout_below="@id/lunchEditText"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+    <EditText
+        android:id="@+id/dinnerEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dinnerTextView"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="text"/>
+
+    <Button
+        android:id="@+id/randomizeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Randomize"
+        android:layout_below="@id/dinnerEditText"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <Button
+        android:id="@+id/goToPlansButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to Plans"
+        android:layout_below="@id/randomizeButton"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+ <Button
+     android:id="@+id/goToMainMenuButton"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="Go to Main Menu"
+     android:layout_below="@id/goToPlansButton"
+     android:layout_marginTop="16dp"
+     android:layout_marginStart="16dp"
+     android:layout_marginEnd="16dp"/>
+
+
+
+</RelativeLayout>
