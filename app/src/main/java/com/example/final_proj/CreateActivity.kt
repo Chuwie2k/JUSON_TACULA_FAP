@@ -49,16 +49,20 @@ class CreateActivity : AppCompatActivity() {
         }
 
         // Set click listener for the "Go to Plans" button
-        goToPlansButton.setOnClickListener {
-            // Create an Intent to start the MainActivity
-            val intent = Intent(this, MainActivity::class.java)
-            // Start the MainActivity
-            startActivity(intent)
-            // Finish the current activity
-            finish()
+        goToPlansButton.setOnClickListener {}
 
 
-        }
+            goToMainMenuButton.setOnClickListener{
+                // Create an Intent to start the MainActivity
+                val intent = Intent(this, MainActivity::class.java)
+                // Start the MainActivity
+                startActivity(intent)
+                // Finish the current activity
+                finish()
+            }
+
+
+
     }
 
     private fun randomizeFood() {
