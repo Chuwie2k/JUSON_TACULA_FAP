@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CreateActivity"
-    android:background="@drawable/Grey1">
+    android:background="@drawable/grey1">
 
     <TextView
         android:id="@+id/textView2"
@@ -53,6 +53,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@android:color/white"
+        android:background="@drawable/rounded_edittext_background"
         android:hint="Enter Your Name"
         android:inputType="text"
         android:textColor="#FFFFFF" />
@@ -76,6 +77,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_edittext_background"
         android:hint="Enter Breakfast Option"
         android:backgroundTint="@android:color/white"
         android:inputType="text"/>
@@ -99,6 +101,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_edittext_background"
         android:hint="Enter Lunch Option"
         android:backgroundTint="@android:color/white"
         android:inputType="text"/>
@@ -122,6 +125,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_edittext_background"
         android:hint="Enter Dinner Option"
         android:backgroundTint="@android:color/white"
         android:inputType="text"/>
