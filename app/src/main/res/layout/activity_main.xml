@@ -4,35 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/Grey1"
     tools:context=".MainActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="-195dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <ImageView
-        android:id="@+id/logoView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_gravity="center"/>
+        <ImageView
+            android:id="@+id/logoView"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            app:srcCompat="@drawable/Foodrng" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="Can't Decide? We Decide!"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/goToCreateButton"
+            app:layout_constraintTop_toBottomOf="@+id/logoView" />
 
         <Button
             android:id="@+id/goToCreateButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create a Food Plan!"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:text="CREATE A FOOD PLAN"
+            android:textSize="26sp" />
 
-        <!-- Button to go to Plans screen -->
         <Button
             android:id="@+id/goToPlansButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Go to Plan lists"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:text="GO TO PLAN LISTS"
+            android:textSize="26sp" />
 
     </LinearLayout>
 
