@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
@@ -21,7 +22,7 @@ class CreateActivity : AppCompatActivity() {
     private lateinit var dinnerEditText: EditText
     private lateinit var randomizeButton: Button
     private lateinit var goToPlansButton: Button
-    private lateinit var goToMainMenuButton: Button
+    private lateinit var goToMainMenuButton: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +50,10 @@ class CreateActivity : AppCompatActivity() {
         }
 
         // Set click listener for the "Go to Plans" button
-        goToPlansButton.setOnClickListener {}
+        goToPlansButton.setOnClickListener {
+            val intent = Intent(this, PlansActivity::class.java)
+            startActivity(intent)
+        }
 
 
             goToMainMenuButton.setOnClickListener{

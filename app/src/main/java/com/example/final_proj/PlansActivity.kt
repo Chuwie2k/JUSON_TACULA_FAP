@@ -1,6 +1,8 @@
 package com.example.final_proj
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
@@ -15,6 +17,8 @@ class PlansActivity : AppCompatActivity() {
         setContentView(R.layout.activity_plan)
 
         val plansTableLayout: TableLayout = findViewById(R.id.plansTableLayout)
+        val goToMainMenuButton : ImageButton = findViewById(R.id.goToMainMenuButton)
+
 
         val sampleData = listOf(
             PlanData("John", "Cereal", "Salad", "Pizza"),
@@ -44,7 +48,16 @@ class PlansActivity : AppCompatActivity() {
 
             plansTableLayout.addView(row)
         }
+        goToMainMenuButton.setOnClickListener{
+            // Create an Intent to start the MainActivity
+            val intent = Intent(this, CreateActivity::class.java)
+            // Start the MainActivity
+            startActivity(intent)
+            // Finish the current activity
+            finish()
+        }
     }
+
 
     // Data class to represent a plan
     data class PlanData(

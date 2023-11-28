@@ -163,28 +163,42 @@
         android:layout_marginEnd="16dp"
         android:background="@color/red"/>
 
+
+    <Button
+        android:id="@+id/savePlanButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SAVE PLAN"
+        android:textSize="20sp"
+        android:layout_below="@id/randomizeButton"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/grey" />
+
     <Button
         android:id="@+id/goToPlansButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="GO TO PLANS"
         android:textSize="20sp"
-        android:layout_below="@id/randomizeButton"
+        android:layout_below="@id/savePlanButton"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@color/grey"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/goToMainMenuButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GO TO MAIN MENU"
-        android:textSize="20sp"
-        android:layout_below="@id/goToPlansButton"
-        android:layout_marginTop="16dp"
+        android:src="@android:drawable/ic_media_previous"
+        android:contentDescription="Back"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/grey" />
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent" />
+
 
 </RelativeLayout>
