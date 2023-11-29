@@ -27,7 +27,7 @@
         android:layout_below="@id/logoView2"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="45dp"
+        android:layout_marginEnd="62dp"
         android:gravity="center"
         android:text="Let us help choose for you!"
         android:textColor="#000000"
@@ -42,8 +42,8 @@
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="179dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="196dp"
         android:text="Name"
         android:textColor="#000000"
         android:textSize="21sp" />
@@ -74,7 +74,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="17dp"
-        android:layout_marginEnd="160dp"
+        android:layout_marginEnd="177dp"
         android:text="Breakfast"
         android:textColor="#000000"
         android:textSize="21sp" />
@@ -103,8 +103,8 @@
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="178dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="195dp"
         android:text="Lunch"
         android:textColor="#000000"
         android:textSize="21sp" />
@@ -131,11 +131,11 @@
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="178dp"
-        android:textSize="20sp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="193dp"
         android:text="Dinner"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/dinnerEditText"
@@ -161,7 +161,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@color/red"/>
+        android:background="@color/grey"/>
 
 
     <Button
