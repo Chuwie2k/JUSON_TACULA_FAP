@@ -101,12 +101,13 @@ class CreateActivity : AppCompatActivity() {
     }
 
     private fun savePlanToDatabase() {
-        //Get data from EditText to Database
+        // Get data from EditText to Database
         val name = nameEditText.text.toString().trim()
         val breakfast = breakfastEditText.text.toString().trim()
         val lunch = lunchEditText.text.toString().trim()
         val dinner = dinnerEditText.text.toString().trim()
-        //Validation for the field
+
+        // Validation for the field
         if (name.isEmpty() || breakfast.isEmpty() || lunch.isEmpty() || dinner.isEmpty()) {
             Toast.makeText(
                 this,
@@ -114,17 +115,26 @@ class CreateActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
             return
-
         }
-        val plan = Plan(name, breakfast, lunch, dinner)
-        databaseReference.child("plans").child("uniqueID").setValue(plan)
 
-        Toast.makeText(
-            this,
-            "Plan saved successfully",
-            Toast.LENGTH_SHORT
-        ).show()
+        // Generate a unique key for each plan using push()
+        val planKey = databaseReference.child("plans").child("uniqueID").push().key
 
-    }}
+        if (planKey != null) {
+            // Create a Plan object
+            val plan = Plan(name, breakfast, lunch, dinner)
+
+            // Save the plan using the generated key
+            databaseReference.child("plans").child("uniqueID").child(planKey).setValue(plan)
+
+            Toast.makeText(
+                this,
+                "Plan saved successfully",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+}
 
 

@@ -60,7 +60,7 @@
         android:background="@drawable/rounded_edittext_background"
         android:hint="Enter Your Name"
         android:inputType="text"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:gravity="center"
         android:paddingTop="8dp"
         android:paddingBottom="8dp" />
