@@ -4,12 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".CreateActivity"
+    tools:context=".DetailsActivity"
     android:background="@drawable/grey1">
 
-
     <ImageView
-        android:id="@+id/logoView2"
+        android:id="@+id/fooddetails"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_alignParentStart="true"
@@ -18,27 +17,13 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="-1dp"
         android:gravity="center"
-        app:srcCompat="@drawable/foodlogo2" />
+        app:srcCompat="@drawable/fooddetails" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/logoView2"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="45dp"
-        android:gravity="center"
-        android:text="Let us help choose for you!"
-        android:textColor="#000000"
-        android:textSize="22dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/enterNameTextView"
+        android:id="@+id/detailNameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView3"
+        android:layout_below="@id/fooddetails"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="16dp"
@@ -49,16 +34,16 @@
         android:textSize="21sp" />
 
     <EditText
-        android:id="@+id/nameEditText"
+        android:id="@+id/nameDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/enterNameTextView"
+        android:layout_below="@id/detailNameView"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@android:color/white"
         android:background="@drawable/rounded_edittext_background"
-        android:hint="Enter Your Name"
+        android:hint="Name of the Person"
         android:inputType="text"
         android:textColor="#FFFFFF"
         android:gravity="center"
@@ -66,138 +51,121 @@
         android:paddingBottom="8dp" />
 
     <TextView
-        android:id="@+id/breakfastTextView"
+        android:id="@+id/detailBreakFastView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/nameEditText"
+        android:layout_below="@id/nameDetails"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="162dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="161dp"
         android:text="Breakfast"
         android:textColor="#000000"
         android:textSize="21sp" />
 
     <EditText
-        android:id="@+id/breakfastEditText"
+        android:id="@+id/breakfastDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/breakfastTextView"
-        android:layout_marginTop="8dp"
+        android:layout_below="@id/detailBreakFastView"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/rounded_edittext_background"
         android:backgroundTint="@android:color/white"
-        android:hint="Enter Breakfast Option"
+        android:background="@drawable/rounded_edittext_background"
+        android:hint="What's your Breakfast?"
         android:inputType="text"
+        android:textColor="#FFFFFF"
         android:gravity="center"
         android:paddingTop="8dp"
-        android:paddingBottom="8dp"/>
+        android:paddingBottom="8dp" />
 
     <TextView
-        android:id="@+id/lunchTextView"
+        android:id="@+id/detailLunchView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/breakfastEditText"
+        android:layout_below="@id/breakfastDetails"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="177dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="176dp"
         android:text="Lunch"
         android:textColor="#000000"
         android:textSize="21sp" />
 
     <EditText
-        android:id="@+id/lunchEditText"
+        android:id="@+id/lunchDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lunchTextView"
-        android:layout_marginTop="8dp"
+        android:layout_below="@id/detailLunchView"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
-        android:gravity="center"
-        android:background="@drawable/rounded_edittext_background"
-        android:hint="Enter Lunch Option"
         android:backgroundTint="@android:color/white"
-        android:inputType="text"/>
+        android:background="@drawable/rounded_edittext_background"
+        android:hint="What's your Lunch"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
 
     <TextView
-        android:id="@+id/dinnerTextView"
+        android:id="@+id/detailDinnerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lunchEditText"
+        android:layout_below="@id/lunchDetails"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="179dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="176dp"
         android:text="Dinner"
         android:textColor="#000000"
-        android:textSize="20sp" />
+        android:textSize="21sp" />
 
     <EditText
-        android:id="@+id/dinnerEditText"
+        android:id="@+id/dinnerDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/dinnerTextView"
-        android:layout_marginTop="8dp"
+        android:layout_below="@id/detailDinnerView"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
-        android:gravity="center"
-        android:background="@drawable/rounded_edittext_background"
-        android:hint="Enter Dinner Option"
         android:backgroundTint="@android:color/white"
-        android:inputType="text"/>
+        android:background="@drawable/rounded_edittext_background"
+        android:hint="What's your Dinner"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
 
     <Button
-        android:id="@+id/randomizeButton"
+        android:id="@+id/UpdateButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="RANDOMIZE"
+        android:text="Update"
         android:textSize="20sp"
-        android:layout_below="@id/dinnerEditText"
-        android:layout_marginTop="16dp"
+        android:layout_below="@id/dinnerDetails"
+        android:layout_marginTop="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@color/grey"/>
 
     <Button
-        android:id="@+id/savePlanButton"
+        android:id="@+id/GobackButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SAVE PLAN"
+        android:text="Go Back"
         android:textSize="20sp"
-        android:layout_below="@id/randomizeButton"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/grey" />
-
-    <Button
-        android:id="@+id/goToPlansButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="GO TO PLANS"
-        android:textSize="20sp"
-        android:layout_below="@id/savePlanButton"
+        android:layout_below="@id/UpdateButton"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@color/grey"/>
-
-    <ImageButton
-        android:id="@+id/goToMainMenuButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_media_previous"
-        android:contentDescription="Back"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/transparent" />
 
 
 </RelativeLayout>
