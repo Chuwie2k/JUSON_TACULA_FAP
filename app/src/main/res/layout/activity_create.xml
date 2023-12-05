@@ -90,7 +90,7 @@
         android:background="@drawable/rounded_edittext_background"
         android:backgroundTint="@android:color/white"
         android:hint="Enter Breakfast Option"
-        android:inputType="text"
+        android:inputType="none"
         android:gravity="center"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"/>
@@ -121,7 +121,7 @@
         android:background="@drawable/rounded_edittext_background"
         android:hint="Enter Lunch Option"
         android:backgroundTint="@android:color/white"
-        android:inputType="text"/>
+        android:inputType="none"/>
 
     <TextView
         android:id="@+id/dinnerTextView"
@@ -149,7 +149,7 @@
         android:background="@drawable/rounded_edittext_background"
         android:hint="Enter Dinner Option"
         android:backgroundTint="@android:color/white"
-        android:inputType="text"/>
+        android:inputType="none"/>
 
     <Button
         android:id="@+id/randomizeButton"

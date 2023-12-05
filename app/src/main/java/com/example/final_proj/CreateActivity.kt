@@ -2,6 +2,7 @@ package com.example.final_proj
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -52,6 +53,9 @@ class CreateActivity : AppCompatActivity() {
         goToMainMenuButton = findViewById(R.id.goToMainMenuButton)
         savePlanButton = findViewById(R.id.savePlanButton)
 
+        breakfastEditText.inputType = InputType.TYPE_NULL
+        lunchEditText.inputType = InputType.TYPE_NULL
+        dinnerEditText.inputType = InputType.TYPE_NULL
 
         // Set click listener for the randomize button
         randomizeButton.setOnClickListener {
@@ -98,6 +102,11 @@ class CreateActivity : AppCompatActivity() {
         breakfastEditText.setText(breakfastOptions[randomBreakfastIndex])
         lunchEditText.setText(lunchOptions[randomLunchIndex])
         dinnerEditText.setText(dinnerOptions[randomDinnerIndex])
+
+        // Make EditText fields editable after randomization
+        breakfastEditText.inputType = InputType.TYPE_CLASS_TEXT
+        lunchEditText.inputType = InputType.TYPE_CLASS_TEXT
+        dinnerEditText.inputType = InputType.TYPE_CLASS_TEXT
     }
 
     private fun savePlanToDatabase() {
