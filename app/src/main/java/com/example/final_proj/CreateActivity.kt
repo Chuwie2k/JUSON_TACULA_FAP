@@ -1,5 +1,6 @@
 package com.example.final_proj
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
@@ -103,10 +104,7 @@ class CreateActivity : AppCompatActivity() {
         lunchEditText.setText(lunchOptions[randomLunchIndex])
         dinnerEditText.setText(dinnerOptions[randomDinnerIndex])
 
-        // Make EditText fields editable after randomization
-        breakfastEditText.inputType = InputType.TYPE_CLASS_TEXT
-        lunchEditText.inputType = InputType.TYPE_CLASS_TEXT
-        dinnerEditText.inputType = InputType.TYPE_CLASS_TEXT
+
     }
 
     private fun savePlanToDatabase() {
@@ -130,11 +128,14 @@ class CreateActivity : AppCompatActivity() {
         val planKey = databaseReference.child("plans").child("uniqueID").push().key
 
         if (planKey != null) {
+            // Replace hyphens with underscores in the generated key
+            val sanitizedKey = planKey.replace("-", "_")
+
             // Create a Plan object
             val plan = Plan(name, breakfast, lunch, dinner)
 
-            // Save the plan using the generated key
-            databaseReference.child("plans").child("uniqueID").child(planKey).setValue(plan)
+            // Save the plan using the sanitized key
+            databaseReference.child("plans").child("uniqueID").child(sanitizedKey).setValue(plan)
 
             Toast.makeText(
                 this,
@@ -143,7 +144,7 @@ class CreateActivity : AppCompatActivity() {
             ).show()
         }
     }
-
 }
+
 
 
