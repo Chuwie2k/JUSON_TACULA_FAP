@@ -121,7 +121,7 @@ class CreateActivity : AppCompatActivity() {
 
         Toast.makeText(
             this,
-            "Plan saved successfully",
+            "com.example.final_proj.Plan saved successfully",
             Toast.LENGTH_SHORT
         ).show()
 
