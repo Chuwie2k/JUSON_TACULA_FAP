@@ -169,6 +169,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_centerHorizontal="true"
+        android:typeface="monospace"
+        android:textStyle="bold"
         android:background="@drawable/shaped_button"
         android:text="RANDOMIZE"
         android:textSize="20sp" />
@@ -183,6 +185,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:typeface="monospace"
+        android:textStyle="bold"
         android:layout_centerHorizontal="true"
         android:background="@drawable/shaped_button"/>
 
@@ -196,6 +200,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:typeface="monospace"
+        android:textStyle="bold"
         android:layout_centerHorizontal="true"
         android:background="@drawable/shaped_button"/>
 

@@ -15,17 +15,19 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"/>
 
-
     <ListView
         android:id="@+id/plansListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/buttonsLayout"
+        android:layout_height="0dp"
         android:layout_below="@id/logoImageView"
-        android:layout_marginTop="14dp"
-        android:layout_marginBottom="1dp"
-        android:divider="@android:color/black"
-        android:dividerHeight="1dp" />
+        android:layout_above="@+id/buttonsLayout"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textAppearance="?android:textAppearanceListItemSmall"/>
 
     <RelativeLayout
         android:id="@+id/buttonsLayout"
@@ -39,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:textStyle="bold"
+            android:typeface="monospace"
             android:fontFamily="sans-serif-medium"
             android:background="@drawable/shaped_button"
             android:text="Back"/>
@@ -49,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:textStyle="bold"
+            android:typeface="monospace"
             android:fontFamily="sans-serif-medium"
             android:background="@drawable/shaped_button"
             android:text="Delete" />
