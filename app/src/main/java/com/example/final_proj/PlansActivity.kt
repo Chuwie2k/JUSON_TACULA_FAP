@@ -49,18 +49,17 @@ class PlansActivity : AppCompatActivity() {
 
                 for (userSnapshot in dataSnapshot.children) {
                     for (planSnapshot in userSnapshot.children) {
-                        val planId = planSnapshot.key
                         val name = planSnapshot.child("name").getValue(String::class.java)
                         val breakfast = planSnapshot.child("breakfast").getValue(String::class.java)
                         val lunch = planSnapshot.child("lunch").getValue(String::class.java)
                         val dinner = planSnapshot.child("dinner").getValue(String::class.java)
 
-                        if (planId != null && name != null && breakfast != null && lunch != null && dinner != null) {
-                            val planDetails = "ID: $planId\nName: $name\n" +
+                        if (name != null && breakfast != null && lunch != null && dinner != null) {
+                            val planDetails = "Name: $name\n" +
                                     "Breakfast: $breakfast\nLunch: $lunch\nDinner: $dinner\n"
                             adapter.add(planDetails)
                         } else {
-                            Log.e("PlansActivity", "Incomplete plan data for ID: $planId")
+                            Log.e("PlansActivity", "Incomplete plan data")
                         }
                     }
                 }
