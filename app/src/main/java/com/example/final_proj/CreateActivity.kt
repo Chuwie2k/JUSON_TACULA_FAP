@@ -130,7 +130,7 @@ class CreateActivity : AppCompatActivity() {
             "Sandwich",
             "Soup",
             "Pasta",
-            "Karl"
+            "Karl",
             "Adobo",
             "Sinigang",
             "Lechon Kawali",
