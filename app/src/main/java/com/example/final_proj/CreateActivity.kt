@@ -110,10 +110,10 @@ class CreateActivity : AppCompatActivity() {
 
     private fun randomizeFood() {
         // Dummy data for food items, replace with your actual data
-        val breakfastOptions = listOf("Omelette", "Pancakes", "Cereal", "Vince")
-        val lunchOptions = listOf("Salad", "Sandwich", "Soup", "Pasta", "Karl")
+        val breakfastOptions = listOf("Omelette", "Pancakes", "Cereal", "Pandesal")
+        val lunchOptions = listOf("Salad", "Sandwich", "Soup", "Pasta", "Daing")
         val dinnerOptions =
-            listOf("Grilled Chicken", "Fish Tacos", "Vegetarian Stir Fry", "Pizza", "Vince")
+            listOf("Grilled Chicken", "Fish Tacos", "Vegetarian Stir Fry", "Pizza", "Hotdog", "Mongo")
 
         // Generate random indices to select random items from each list
         val randomBreakfastIndex = Random().nextInt(breakfastOptions.size)
