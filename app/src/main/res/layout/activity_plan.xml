@@ -15,11 +15,22 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"/>
 
+    <TextView
+        android:id="@+id/enterNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoImageView"
+        android:layout_centerHorizontal="true"
+        android:text="Press the List to Edit the Name!"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold"/>
+
     <ListView
         android:id="@+id/plansListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_below="@id/logoImageView"
+        android:layout_below="@id/enterNameTextView"
         android:layout_above="@+id/buttonsLayout"
         android:layout_weight="1"
         android:divider="@android:color/darker_gray"

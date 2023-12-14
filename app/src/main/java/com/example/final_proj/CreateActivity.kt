@@ -110,10 +110,65 @@ class CreateActivity : AppCompatActivity() {
 
     private fun randomizeFood() {
         // Dummy data for food items, replace with your actual data
-        val breakfastOptions = listOf("Omelette", "Pancakes", "Cereal", "Pandesal")
-        val lunchOptions = listOf("Salad", "Sandwich", "Soup", "Pasta", "Daing")
-        val dinnerOptions =
-            listOf("Grilled Chicken", "Fish Tacos", "Vegetarian Stir Fry", "Pizza", "Hotdog", "Mongo")
+        val breakfastOptions = listOf(
+            "Omelette",
+            "Pancakes",
+            "Cereal",
+            "Vince",
+            "Tapsilog",
+            "Longsilog",
+            "Bangsilog",
+            "Tocilog",
+            "Champorado",
+            "Sinangag with Itlog",
+            "Arroz Caldo",
+            "Taho",
+            "Lugaw",
+            "Daing na Bangus",)
+        val lunchOptions = listOf(
+            "Salad",
+            "Sandwich",
+            "Soup",
+            "Pasta",
+            "Karl"
+            "Adobo",
+            "Sinigang",
+            "Lechon Kawali",
+            "Kare-Kare",
+            "Pancit Canton",
+            "Chicken Tinola",
+            "Bangus Sinigang",
+            "Bistek Tagalog",
+            "Laing",
+            "Tinolang Manok",
+            "Paksiw na Lechon",
+            "Dinuguan",
+            "Tortang Talong",
+            "Lumpiang Shanghai",
+            "Ginataang Kalabasa at Sitaw",
+            "Inihaw na Liempo",
+            "Relyenong Bangus",)
+        val dinnerOptions = listOf(
+            "Grilled Chicken",
+            "Fish Tacos",
+            "Vegetarian Stir Fry",
+            "Pizza",
+            "Vince",
+            "Lechon Manok",
+            "Inihaw na Baboy",
+            "Bangus Belly Steak",
+            "Pinakbet",
+            "Chicken Adobo",
+            "Lumpiang Shanghai",
+            "Kare-Kare",
+            "Bicol Express",
+            "Sinigang na Baboy",
+            "Adobong Pusit",
+            "Lechon Kawali",
+            "Giniling na Baboy",
+            "Tinolang Isda",
+            "Laing",
+            "Paksiw na Isda",)
 
         // Generate random indices to select random items from each list
         val randomBreakfastIndex = Random().nextInt(breakfastOptions.size)
