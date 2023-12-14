@@ -15,7 +15,6 @@ class PlansActivity : AppCompatActivity() {
     private lateinit var backButton: Button
     private lateinit var databaseReference: DatabaseReference
     private lateinit var adapter: ArrayAdapter<String>
-    private var firstPlanId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,9 +34,7 @@ class PlansActivity : AppCompatActivity() {
         // Set click listener for the delete button
         deleteButton.setOnClickListener {
             // Delete the first plan entered
-            if (firstPlanId != null) {
-                deletePlan(firstPlanId!!)
-            }
+            deleteFirstPlan()
         }
 
         // Set click listener for the back button
@@ -52,55 +49,59 @@ class PlansActivity : AppCompatActivity() {
 
                 for (userSnapshot in dataSnapshot.children) {
                     for (planSnapshot in userSnapshot.children) {
+                        val planId = planSnapshot.key
                         val name = planSnapshot.child("name").getValue(String::class.java)
                         val breakfast = planSnapshot.child("breakfast").getValue(String::class.java)
                         val lunch = planSnapshot.child("lunch").getValue(String::class.java)
                         val dinner = planSnapshot.child("dinner").getValue(String::class.java)
 
-                        if (name != null && breakfast != null && lunch != null && dinner != null) {
-                            val planDetails = "ID: ${planSnapshot.key}\nName: $name\n" +
+                        if (planId != null && name != null && breakfast != null && lunch != null && dinner != null) {
+                            val planDetails = "ID: $planId\nName: $name\n" +
                                     "Breakfast: $breakfast\nLunch: $lunch\nDinner: $dinner\n"
                             adapter.add(planDetails)
-
-                            // Save the ID of the first plan entered
-                            if (firstPlanId == null) {
-                                firstPlanId = planSnapshot.key
-                            }
+                        } else {
+                            Log.e("PlansActivity", "Incomplete plan data for ID: $planId")
                         }
                     }
                 }
+
+                Log.d("PlansActivity", "Number of plans in adapter: ${adapter.count}")
+                adapter.notifyDataSetChanged()
             }
+
+
 
             override fun onCancelled(databaseError: DatabaseError) {
                 // Handle errors
+                Log.e("PlansActivity", "Error loading plans", databaseError.toException())
             }
         })
     }
 
-    private fun deletePlan(planId: String) {
-        val planReference = databaseReference.child("plans").child(planId)
+    private fun deleteFirstPlan() {
+        if (adapter.isEmpty) {
+            Log.d("PlansActivity", "No plans to delete")
+            return
+        }
 
-        // Remove the plan from the database
-        planReference.removeValue()
-            .addOnSuccessListener {
-                // Plan deleted successfully
-                Log.d("PlansActivity", "Plan deleted successfully with ID: $planId")
+        val firstPlanId = adapter.getItem(0)?.substringAfter("ID: ")?.substringBefore("\n")
+        if (firstPlanId != null) {
+            val planReference = databaseReference.child(firstPlanId)
 
-                // Update the UI after deletion
-                adapter.notifyDataSetChanged()
+            planReference.removeValue()
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Log.d("PlansActivity", "Plan deleted successfully with ID: $firstPlanId")
 
-                // Update firstPlanId if the deleted plan was the first plan
-                if (firstPlanId == planId) {
-                    firstPlanId = null
+                        // Update the UI after deletion
+                        adapter.remove(adapter.getItem(0))
+                        adapter.notifyDataSetChanged()
+                    } else {
+                        Log.e("PlansActivity", "Error deleting plan with ID: $firstPlanId", task.exception)
+                    }
                 }
-            }
-            .addOnFailureListener { e ->
-                // Handle failure, show an error message or log
-                Log.e("PlansActivity", "Error deleting plan with ID: $planId", e)
-            }
+        }
     }
 
+
 }
-
-
-

@@ -1,6 +1,5 @@
 package com.example.final_proj
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
@@ -11,7 +10,6 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.final_proj.Plan
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -33,6 +31,9 @@ class CreateActivity : AppCompatActivity() {
     private lateinit var goToMainMenuButton: ImageButton
     private lateinit var databaseReference: DatabaseReference
 
+    private var randomizeButtonPressed = false
+    private var saveButtonPressed = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create)
@@ -50,30 +51,45 @@ class CreateActivity : AppCompatActivity() {
         dinnerTextView = findViewById(R.id.dinnerTextView)
         dinnerEditText = findViewById(R.id.dinnerEditText)
         randomizeButton = findViewById(R.id.randomizeButton)
+        savePlanButton = findViewById(R.id.savePlanButton)
         goToPlansButton = findViewById(R.id.goToPlansButton)
         goToMainMenuButton = findViewById(R.id.goToMainMenuButton)
-        savePlanButton = findViewById(R.id.savePlanButton)
 
         breakfastEditText.inputType = InputType.TYPE_NULL
         lunchEditText.inputType = InputType.TYPE_NULL
         dinnerEditText.inputType = InputType.TYPE_NULL
 
-        // Set click listener for the randomize button
         randomizeButton.setOnClickListener {
-            // Call a function to generate random food items for breakfast, lunch, and dinner
-            randomizeFood()
+            if (!randomizeButtonPressed) {
+                // Call a function to generate random food items for breakfast, lunch, and dinner
+                randomizeFood()
+                randomizeButtonPressed = true
+            } else {
+                // Display a toast when randomize button is pressed again
+                Toast.makeText(this, "You cannot press Randomize again!", Toast.LENGTH_SHORT).show()
+            }
         }
+
         savePlanButton.setOnClickListener {
+            if (!randomizeButtonPressed) {
+                // Display a toast if save button is pressed without randomizing
+                Toast.makeText(this, "Press the Randomize button first!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Save the plan to the database
             savePlanToDatabase()
+
+            // Clear input fields and reset flags
+            clearInputFields()
+            randomizeButtonPressed = false
+            saveButtonPressed = true
         }
 
-
-        // Set click listener for the "Go to Plans" button
         goToPlansButton.setOnClickListener {
             val intent = Intent(this, PlansActivity::class.java)
             startActivity(intent)
         }
-
 
         goToMainMenuButton.setOnClickListener {
             // Create an Intent to start the MainActivity
@@ -83,8 +99,13 @@ class CreateActivity : AppCompatActivity() {
             // Finish the current activity
             finish()
         }
+    }
 
-
+    private fun clearInputFields() {
+        nameEditText.text.clear()
+        breakfastEditText.text.clear()
+        lunchEditText.text.clear()
+        dinnerEditText.text.clear()
     }
 
     private fun randomizeFood() {
@@ -103,8 +124,6 @@ class CreateActivity : AppCompatActivity() {
         breakfastEditText.setText(breakfastOptions[randomBreakfastIndex])
         lunchEditText.setText(lunchOptions[randomLunchIndex])
         dinnerEditText.setText(dinnerOptions[randomDinnerIndex])
-
-
     }
 
     private fun savePlanToDatabase() {
@@ -145,6 +164,3 @@ class CreateActivity : AppCompatActivity() {
         }
     }
 }
-
-
-
