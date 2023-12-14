@@ -4,15 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/androidbackground"
     android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/foodplan"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
 
     <ListView
         android:id="@+id/plansListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"
-        android:layout_above="@+id/buttonsLayout"/>
+        android:layout_above="@+id/buttonsLayout"
+        android:layout_below="@id/logoImageView"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="1dp"
+        android:divider="@android:color/black"
+        android:dividerHeight="1dp" />
 
     <RelativeLayout
         android:id="@+id/buttonsLayout"
@@ -24,15 +37,20 @@
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back"
             android:layout_alignParentLeft="true"
-            android:layout_marginRight="16dp"/>
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:background="@drawable/shaped_button"
+            android:text="Back"/>
 
         <Button
             android:id="@+id/deleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete First"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:background="@drawable/shaped_button"
+            android:text="Delete" />
     </RelativeLayout>
 </RelativeLayout>
